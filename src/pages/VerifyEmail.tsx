@@ -27,7 +27,7 @@ const VerifyEmail: React.FC = () => {
         
         // Wait 2 seconds, then redirect to login page with a success message
         setTimeout(() => {
-          history.replace("/login?verified=true");
+          history.replace("/login");
         }, 2000);
       } catch (err: any) {
         console.error(err);
