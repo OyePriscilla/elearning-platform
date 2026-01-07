@@ -67,7 +67,7 @@ const Register: React.FC = () => {
       });
 
 await sendEmailVerification(userCredential.user, {
-  url: "http://localhost:8100/verify-email", // your app route
+ url: "https://e-learning-549db.web.app/verify-email", // your app route
   handleCodeInApp: true, // important to handle in app
 });
       setToast("Registration successful. Verify your email.");
