@@ -1,3 +1,4 @@
+// src/pages/Register.tsx
 import React, { useState } from "react";
 import {
   IonPage,
@@ -13,6 +14,7 @@ import {
   IonCardContent,
   IonText,
   IonToast,
+  IonSpinner,
 } from "@ionic/react";
 import {
   createUserWithEmailAndPassword,
@@ -20,10 +22,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth, db } from "../firebase";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { useHistory } from "react-router-dom";
 import "./Register.css";
-
 
 const Register: React.FC = () => {
   const [fullName, setFullName] = useState("");
@@ -63,23 +64,17 @@ const Register: React.FC = () => {
         fullName,
         matricNumber,
         email,
-        createdAt: new Date(),
+        createdAt: serverTimestamp(),
       });
 
-await sendEmailVerification(userCredential.user, {
- url: "https://e-learning-549db.web.app/verify-email", // your app route
-  handleCodeInApp: true, // important to handle in app
-});
-      setToast("Registration successful. Verify your email.");
-      history.push("/confirm-email");
+      await sendEmailVerification(userCredential.user, {
+        url: "https://e-learning-549db.web.app/verify-email",
+        handleCodeInApp: true,
+      });
+
+      history.replace("/confirm-email");
     } catch (err: any) {
-      if (err.code === "auth/email-already-in-use") {
-        setToast("Email already registered");
-      } else if (err.code === "auth/weak-password") {
-        setToast("Weak password");
-      } else {
-        setToast(err.message);
-      }
+      setToast(err.message || "Registration failed");
     } finally {
       setLoading(false);
     }
@@ -89,34 +84,46 @@ await sendEmailVerification(userCredential.user, {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Register</IonTitle>
+          <IonTitle>Create Account</IonTitle>
         </IonToolbar>
       </IonHeader>
 
       <IonContent className="ion-padding">
-        <IonCard>
+        <IonCard className="auth-card">
           <IonCardContent>
-            <IonText className="ion-text-center">
-              <h2>Create Account</h2>
+
+            <IonText className="auth-header">
+              <h2>Student Registration</h2>
+              <p>Fill in your details to continue</p>
             </IonText>
 
-            <IonItem>
-              <IonLabel position="floating">Full Name</IonLabel>
-              <IonInput value={fullName} onIonChange={e => setFullName(e.detail.value!)} />
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Full Name</IonLabel>
+              <IonInput
+                value={fullName}
+                onIonChange={e => setFullName(e.detail.value!)}
+              />
             </IonItem>
 
-            <IonItem>
-              <IonLabel position="floating">Matric Number</IonLabel>
-              <IonInput value={matricNumber} onIonChange={e => setMatricNumber(e.detail.value!)} />
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Matric Number</IonLabel>
+              <IonInput
+                value={matricNumber}
+                onIonChange={e => setMatricNumber(e.detail.value!)}
+              />
             </IonItem>
 
-            <IonItem>
-              <IonLabel position="floating">Email</IonLabel>
-              <IonInput type="email" value={email} onIonChange={e => setEmail(e.detail.value!)} />
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Email Address</IonLabel>
+              <IonInput
+                type="email"
+                value={email}
+                onIonChange={e => setEmail(e.detail.value!)}
+              />
             </IonItem>
 
-            <IonItem>
-              <IonLabel position="floating">Password</IonLabel>
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Password</IonLabel>
               <IonInput
                 type="password"
                 value={password}
@@ -130,16 +137,18 @@ await sendEmailVerification(userCredential.user, {
               onClick={handleRegister}
               disabled={loading}
             >
-              {loading ? "Registering..." : "Register"}
+              {loading ? <IonSpinner name="crescent" /> : "Register"}
             </IonButton>
 
             <IonButton
               expand="block"
               fill="clear"
+              className="ion-margin-top"
               onClick={() => history.push("/login")}
             >
               Already have an account? Login
             </IonButton>
+
           </IonCardContent>
         </IonCard>
 

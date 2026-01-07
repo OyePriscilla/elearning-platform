@@ -1,29 +1,22 @@
-.login-container {
+.auth-card {
   max-width: 420px;
-  margin: 10vh auto;
+  margin: 0 auto;
 }
 
-ion-card {
-  border-radius: 14px;
+.auth-header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.input-item {
-  --background: #f5f5f5;            /* light gray background */
-  border-radius: 12px;              /* rounded corners */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
-  margin-top: 20px;                 /* spacing between fields */
-  padding: 0 12px;                  /* horizontal padding */
-  --highlight-color-focused: #3880ff; /* blue focus color */
-  height: 60px;                     /* ensure enough height for label */
+.auth-header h2 {
+  margin-bottom: 4px;
 }
 
-.input-field {
-  padding: 18px 10px 0 0;           /* top padding so label floats correctly */
-  line-height: 1.2;                 /* prevents overlap with floating label */
+.auth-header p {
+  font-size: 14px;
+  color: var(--ion-color-medium);
 }
 
-
-ion-button {
-  border-radius: 8px;
-  padding: 12px;
+.form-item {
+  margin-bottom: 16px;
 }

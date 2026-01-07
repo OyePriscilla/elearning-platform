@@ -1,6 +1,6 @@
 // src/pages/Login.tsx
 import React, { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import {
   IonPage,
   IonHeader,
@@ -15,40 +15,35 @@ import {
   IonCard,
   IonCardContent,
   IonSpinner,
+  IonToast,
 } from "@ionic/react";
 
 import { auth, db } from "../firebase";
-import {
-  signInWithEmailAndPassword,
-  sendPasswordResetEmail,
-} from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
- import { useLocation } from "react-router-dom";
-
-// Inside Login component
+import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 
 // Allowed email addresses
-const allowedEmails = [
-  "livingsambank@gmail.com",
-  "oyebadepriscilla22@gmail.com",
-];
+const allowedEmails = ["livingsambank@gmail.com", "oyebadepriscilla22@gmail.com"];
 
 const Login: React.FC = () => {
   const history = useHistory();
+  const location = useLocation();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [info, setInfo] = useState("");
   const [loading, setLoading] = useState(false);
-  // Inside Login component
-const location = useLocation();
-useEffect(() => {
-  const params = new URLSearchParams(location.search);
-  if (params.get("verified") === "true") {
-    setInfo("Email verified! Please log in to continue.");
-  }
-}, [location.search]);
+  const [toast, setToast] = useState("");
+
+  // Show "Email verified" message if redirected from VerifyEmail
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get("verified") === "true") {
+      setInfo("Email verified! Please log in to continue.");
+    }
+  }, [location.search]);
+
   // --- Login handler ---
   const handleLogin = async () => {
     setError("");
@@ -64,25 +59,23 @@ useEffect(() => {
     try {
       const cred = await signInWithEmailAndPassword(auth, email, password);
       const user = cred.user;
-
       if (!user) throw new Error("Authentication failed.");
 
-      // Email whitelist
+      // Email whitelist check
       if (!allowedEmails.includes(user.email!)) {
         await auth.signOut();
         throw new Error("Your email is not authorized to access this app.");
       }
 
-      // Email verification
+      // Email verification check
       if (!user.emailVerified) {
         await auth.signOut();
         throw new Error("Please verify your email before logging in.");
       }
 
-      // 🔑 ENSURE USER EXISTS IN FIRESTORE
+      // Ensure Firestore user exists
       const userRef = doc(db, "users", user.uid);
       const snap = await getDoc(userRef);
-
       if (!snap.exists()) {
         await setDoc(userRef, {
           fullName: user.displayName ?? "User",
@@ -90,14 +83,13 @@ useEffect(() => {
           matricNumber: "",
           lecturesProgress: 0,
           assignmentsCompleted: 0,
-          totalAssignments: 5,
-          createdAt: new Date(),
+          totalAssignments: 20, // default total assignments
+          createdAt: serverTimestamp(),
         });
       }
 
-      // ✅ Redirect AFTER Firestore is ready
+      // Redirect to Dashboard/Home
       history.replace("/home");
-
     } catch (err: any) {
       setError(err.message || "Login failed.");
     } finally {
@@ -105,24 +97,22 @@ useEffect(() => {
     }
   };
 
+  // --- Sign Up redirect ---
   const handleSignUp = () => {
-  history.push("/register");
-};
+    history.push("/register");
+  };
 
-
-  // --- Reset Password ---
+  // --- Password reset ---
   const handleResetPassword = async () => {
     setError("");
     setInfo("");
-
     if (!email) {
       setError("Please enter your email to reset password.");
       return;
     }
-
     try {
       await sendPasswordResetEmail(auth, email);
-      setInfo("Password reset email sent. Check your inbox.");
+      setToast("Password reset email sent. Check your inbox.");
     } catch (err: any) {
       setError(err.message || "Failed to send password reset email.");
     }
@@ -137,68 +127,70 @@ useEffect(() => {
       </IonHeader>
 
       <IonContent className="ion-padding">
-       <IonCard>
-  <IonCardContent>
+        <IonCard className="auth-card">
+          <IonCardContent>
 
-    <IonItem>
-      <IonLabel position="floating">Email</IonLabel>
-      <IonInput
-        type="email"
-        value={email}
-        onIonChange={e => setEmail(e.detail.value!)}
-      />
-    </IonItem>
+            <IonText className="auth-header">
+              <h2>Welcome Back</h2>
+              <p>Login to continue</p>
+            </IonText>
 
-    <IonItem className="ion-margin-top">
-      <IonLabel position="floating">Password</IonLabel>
-      <IonInput
-        type="password"
-        value={password}
-        onIonChange={e => setPassword(e.detail.value!)}
-      />
-    </IonItem>
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Email</IonLabel>
+              <IonInput
+                type="email"
+                value={email}
+                onIonChange={e => setEmail(e.detail.value!)}
+              />
+            </IonItem>
 
-    {error && (
-      <IonText color="danger">
-        <p className="ion-padding-top">{error}</p>
-      </IonText>
-    )}
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Password</IonLabel>
+              <IonInput
+                type="password"
+                value={password}
+                onIonChange={e => setPassword(e.detail.value!)}
+              />
+            </IonItem>
 
-    {info && (
-      <IonText color="success">
-        <p className="ion-padding-top">{info}</p>
-      </IonText>
-    )}
+            {error && <IonText color="danger"><p>{error}</p></IonText>}
+            {info && <IonText color="success"><p>{info}</p></IonText>}
 
-    <IonButton
-      expand="block"
-      className="ion-margin-top"
-      onClick={handleLogin}
-      disabled={loading}
-    >
-      {loading ? <IonSpinner name="crescent" /> : "Login"}
-    </IonButton>
+            <IonButton
+              expand="block"
+              className="ion-margin-top"
+              onClick={handleLogin}
+              disabled={loading}
+            >
+              {loading ? <IonSpinner name="crescent" /> : "Login"}
+            </IonButton>
 
-    <IonButton
-      fill="clear"
-      expand="block"
-      onClick={handleResetPassword}
-    >
-      Forgot Password?
-    </IonButton>
+            <IonButton
+              expand="block"
+              fill="clear"
+              onClick={handleResetPassword}
+            >
+              Forgot Password?
+            </IonButton>
 
-    <IonButton
-      fill="clear"
-      expand="block"
-      color="secondary"
-      onClick={handleSignUp}
-    >
-      Don’t have an account? Sign Up
-    </IonButton>
+            <IonButton
+              expand="block"
+              fill="clear"
+              color="secondary"
+              onClick={handleSignUp}
+            >
+              Don’t have an account? Sign Up
+            </IonButton>
 
-  </IonCardContent>
-</IonCard>
+          </IonCardContent>
+        </IonCard>
 
+        <IonToast
+          isOpen={!!toast}
+          message={toast}
+          duration={3000}
+          onDidDismiss={() => setToast("")}
+        />
       </IonContent>
     </IonPage>
   );
