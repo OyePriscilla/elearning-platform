@@ -11,19 +11,19 @@ import {
   IonItem,
   IonLabel,
   IonButton,
-  IonText,
   IonCard,
   IonCardContent,
+  IonText,
   IonSpinner,
   IonToast,
 } from "@ionic/react";
-
-import { auth, db } from "../firebase";
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
-import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 
-// Allowed email addresses
-const allowedEmails = ["livingsambank@gmail.com", "oyebadepriscilla22@gmail.com"];
+const allowedEmails = [
+  "livingsambank@gmail.com",
+  "oyebadepriscilla22@gmail.com",
+];
 
 const Login: React.FC = () => {
   const history = useHistory();
@@ -34,9 +34,7 @@ const Login: React.FC = () => {
   const [error, setError] = useState("");
   const [info, setInfo] = useState("");
   const [loading, setLoading] = useState(false);
-  const [toast, setToast] = useState("");
 
-  // Show "Email verified" message if redirected from VerifyEmail
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     if (params.get("verified") === "true") {
@@ -44,7 +42,6 @@ const Login: React.FC = () => {
     }
   }, [location.search]);
 
-  // --- Login handler ---
   const handleLogin = async () => {
     setError("");
     setInfo("");
@@ -59,36 +56,19 @@ const Login: React.FC = () => {
     try {
       const cred = await signInWithEmailAndPassword(auth, email, password);
       const user = cred.user;
+
       if (!user) throw new Error("Authentication failed.");
 
-      // Email whitelist check
       if (!allowedEmails.includes(user.email!)) {
         await auth.signOut();
         throw new Error("Your email is not authorized to access this app.");
       }
 
-      // Email verification check
       if (!user.emailVerified) {
         await auth.signOut();
         throw new Error("Please verify your email before logging in.");
       }
 
-      // Ensure Firestore user exists
-      const userRef = doc(db, "users", user.uid);
-      const snap = await getDoc(userRef);
-      if (!snap.exists()) {
-        await setDoc(userRef, {
-          fullName: user.displayName ?? "User",
-          email: user.email,
-          matricNumber: "",
-          lecturesProgress: 0,
-          assignmentsCompleted: 0,
-          totalAssignments: 20, // default total assignments
-          createdAt: serverTimestamp(),
-        });
-      }
-
-      // Redirect to Dashboard/Home
       history.replace("/home");
     } catch (err: any) {
       setError(err.message || "Login failed.");
@@ -97,12 +77,6 @@ const Login: React.FC = () => {
     }
   };
 
-  // --- Sign Up redirect ---
-  const handleSignUp = () => {
-    history.push("/register");
-  };
-
-  // --- Password reset ---
   const handleResetPassword = async () => {
     setError("");
     setInfo("");
@@ -112,10 +86,14 @@ const Login: React.FC = () => {
     }
     try {
       await sendPasswordResetEmail(auth, email);
-      setToast("Password reset email sent. Check your inbox.");
+      setInfo("Password reset email sent. Check your inbox.");
     } catch (err: any) {
       setError(err.message || "Failed to send password reset email.");
     }
+  };
+
+  const handleSignUp = () => {
+    history.push("/register");
   };
 
   return (
@@ -129,68 +107,37 @@ const Login: React.FC = () => {
       <IonContent className="ion-padding">
         <IonCard className="auth-card">
           <IonCardContent>
-
             <IonText className="auth-header">
-              <h2>Welcome Back</h2>
-              <p>Login to continue</p>
+              <h2>Student Login</h2>
+              <p>Enter your credentials to continue</p>
             </IonText>
 
             <IonItem className="form-item">
               <IonLabel position="stacked">Email</IonLabel>
-              <IonInput
-                type="email"
-                value={email}
-                onIonChange={e => setEmail(e.detail.value!)}
-              />
+              <IonInput type="email" value={email} onIonChange={e => setEmail(e.detail.value!)} />
             </IonItem>
 
             <IonItem className="form-item">
               <IonLabel position="stacked">Password</IonLabel>
-              <IonInput
-                type="password"
-                value={password}
-                onIonChange={e => setPassword(e.detail.value!)}
-              />
+              <IonInput type="password" value={password} onIonChange={e => setPassword(e.detail.value!)} />
             </IonItem>
 
-            {error && <IonText color="danger"><p>{error}</p></IonText>}
-            {info && <IonText color="success"><p>{info}</p></IonText>}
+            {error && <IonText color="danger" className="ion-padding-top">{error}</IonText>}
+            {info && <IonText color="success" className="ion-padding-top">{info}</IonText>}
 
-            <IonButton
-              expand="block"
-              className="ion-margin-top"
-              onClick={handleLogin}
-              disabled={loading}
-            >
+            <IonButton expand="block" className="ion-margin-top" onClick={handleLogin} disabled={loading}>
               {loading ? <IonSpinner name="crescent" /> : "Login"}
             </IonButton>
 
-            <IonButton
-              expand="block"
-              fill="clear"
-              onClick={handleResetPassword}
-            >
+            <IonButton expand="block" fill="clear" onClick={handleResetPassword}>
               Forgot Password?
             </IonButton>
 
-            <IonButton
-              expand="block"
-              fill="clear"
-              color="secondary"
-              onClick={handleSignUp}
-            >
+            <IonButton expand="block" fill="clear" color="secondary" onClick={handleSignUp}>
               Don’t have an account? Sign Up
             </IonButton>
-
           </IonCardContent>
         </IonCard>
-
-        <IonToast
-          isOpen={!!toast}
-          message={toast}
-          duration={3000}
-          onDidDismiss={() => setToast("")}
-        />
       </IonContent>
     </IonPage>
   );
