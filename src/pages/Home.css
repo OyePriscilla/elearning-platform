@@ -1,0 +1,42 @@
+.progress-track {
+  background: rgba(0, 0, 0, 0.1);
+  height: 8px;
+  border-radius: 4px;
+}
+
+.progress-fill {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--ion-color-primary);
+}
+
+.progress-text {
+  text-align: right;
+  margin-top: 6px;
+  font-size: 0.8rem;
+}
+
+.module-card {
+  border-radius: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.module-card:active {
+  transform: scale(0.97);
+}
+
+.module-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: var(--ion-color-primary);
+}
+
+.module-label {
+  font-size: 0.85rem;
+}
+
+.module-label p {
+  margin: 4px 0 0;
+  font-size: 0.75rem;
+  color: var(--ion-color-medium);
+}

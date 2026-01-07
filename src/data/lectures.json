@@ -1,0 +1,15 @@
+[
+  {
+    "id": 101,
+    "title": "Basic Concepts",
+  "pdf": "https://cdn.jsdelivr.net/gh/OyePriscilla/COS-101-Lecture-Files@main/COS%20101_%20INTRODUCTION%20TO%20COMPUTER%20SCIENCE.pdf",
+    "content": " Understanding the Computer"
+  },
+  {
+    "id": 401,
+    "title": "Computer Languages",
+    "pdf": "/downloads/m4t1.pdf",
+    "ppt": "/downloads/m4t1.pptx",
+    "content": "Overview of programming languages and their uses."
+  }
+]

@@ -1,0 +1,95 @@
+[
+  {
+    "id": 101,
+    "title": "Basic Concepts & The IPOS Cycle",
+    "questions": [
+      {
+        "question": "From which Latin word is the term 'computer' derived?",
+        "options": ["Computus", "Computare", "Computara", "Compumetre"],
+        "correct": "Computare"
+      },
+      {
+        "question": "Which principle describes how a computer functions?",
+        "options": ["GIGO Cycle", "CPU Cycle", "IPOS Cycle", "RAM Cycle"],
+        "correct": "IPOS Cycle"
+      },
+      {
+        "question": "What is defined as raw, unprocessed facts and figures?",
+        "options": ["Information", "Programs", "Data", "Output"],
+        "correct": "Data"
+      },
+      {
+        "question": "Which of the following is an example of an input device?",
+        "options": ["Printer", "Monitor", "Scanner", "Speaker"],
+        "correct": "Scanner"
+      },
+      {
+        "question": "Which part of the CPU acts as the 'traffic cop' of data?",
+        "options": ["Arithmetic Logic Unit (ALU)", "Control Unit (CU)", "Registers", "Hard Drive"],
+        "correct": "Control Unit (CU)"
+      },
+      {
+        "question": "What type of output is intangible and exists only electronically?",
+        "options": ["Hard Copy", "Soft Copy", "Physical Copy", "Analog Copy"],
+        "correct": "Soft Copy"
+      },
+      {
+        "question": "RAM is considered what type of storage?",
+        "options": ["Primary/Volatile", "Primary/Non-volatile", "Secondary/Volatile", "Secondary/Non-volatile"],
+        "correct": "Primary/Volatile"
+      },
+      {
+        "question": "Which acronym describes the idea that bad input leads to bad results?",
+        "options": ["FIFO", "GIGO", "MIPS", "BIPS"],
+        "correct": "GIGO"
+      },
+      {
+        "question": "The ability of a computer to perform different tasks, like playing music and solving math, is called:",
+        "options": ["Diligence", "Accuracy", "Versatility", "Speed"],
+        "correct": "Versatility"
+      },
+      {
+        "question": "A computer has no I.Q. and cannot think on its own; this is considered a:",
+        "options": ["Strength", "Characteristic", "Limitation", "Skill"],
+        "correct": "Limitation"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "title": "Historical Overview of the Computer",
+    "questions": [
+      {
+        "question": "Who is known as the father of the computer?",
+        "options": ["Alan Turing", "Charles Babbage", "John von Neumann", "Steve Jobs"],
+        "correct": "Charles Babbage"
+      },
+      {
+        "question": "Which generation of computers used vacuum tubes?",
+        "options": ["First Generation", "Second Generation", "Third Generation", "Fourth Generation"],
+        "correct": "First Generation"
+      },
+      {
+        "question": "ENIAC was primarily used for:",
+        "options": ["Word Processing", "Scientific Calculations", "Gaming", "Internet Communication"],
+        "correct": "Scientific Calculations"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "title": "Classification of Computers",
+    "questions": [
+      {
+        "question": "Which of these is considered a supercomputer?",
+        "options": ["IBM Summit", "Dell Inspiron", "MacBook Pro", "Raspberry Pi"],
+        "correct": "IBM Summit"
+      },
+      {
+        "question": "Personal computers are also called:",
+        "options": ["Mainframes", "Microcomputers", "Supercomputers", "Minicomputers"],
+        "correct": "Microcomputers"
+      }
+    ]
+  }
+]
