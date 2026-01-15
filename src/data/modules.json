@@ -1,64 +1,9 @@
 [
-  {
-    "moduleTitle": "MODULE 1 - Understanding the Computer",
-    "expanded": true,
-    "topics": [
-      { "id": 101, "title": "Basic Concepts", "isCompleted": false },
-      { "id": 102, "title": "Historical Overview of the Computer", "isCompleted": false },
-      { "id": 103, "title": "Classification of Computers", "isCompleted": false }
-    ]
-  },
-  {
-    "moduleTitle": "MODULE 2 - Computer Hardware",
-    "expanded": false,
-    "topics": [
-      { "id": 201, "title": "Hardware Components (Part 1)", "isCompleted": false, "downloadLink": "/downloads/m2t1.pdf" },
-      { "id": 202, "title": "Peripheral Devices", "isCompleted": false, "downloadLink": "/downloads/m2t2.pdf" },
-      { "id": 203, "title": "Auxiliary Equipment", "isCompleted": false, "downloadLink": "/downloads/m2t3.pdf" }
-    ]
-  },
-  {
-    "moduleTitle": "MODULE 3 - Computer Software",
-    "expanded": false,
-    "topics": [
-      { "id": 301, "title": "Computer Software (1)", "isCompleted": false, "downloadLink": "/downloads/m3t1.pdf" },
-      { "id": 302, "title": "Computer Software (2)", "isCompleted": false, "downloadLink": "/downloads/m3t2.pdf" },
-      { "id": 303, "title": "Categories of Software", "isCompleted": false, "downloadLink": "/downloads/m3t3.pdf" }
-    ]
-  },
-  {
-    "moduleTitle": "MODULE 4 - Programming the Computer",
-    "expanded": false,
-    "topics": [
-      { "id": 401, "title": "Computer Languages", "isCompleted": false, "downloadLink": "/downloads/m4t1.pdf" },
-      { "id": 402, "title": "Basic Principles of Computer Programming", "isCompleted": false, "downloadLink": "/downloads/m4t2.pdf" },
-      { "id": 403, "title": "Flowcharts and Algorithms", "isCompleted": false, "downloadLink": "/downloads/m4t3.pdf" }
-    ]
-  },
-  {
-    "moduleTitle": "MODULE 5 - Visual Basic Programming",
-    "expanded": false,
-    "topics": [
-      { "id": 501, "title": "Programming in Visual Basic (Part 1)", "isCompleted": false, "downloadLink": "/downloads/m5t1.pdf" },
-      { "id": 502, "title": "Visual Basic Project Window", "isCompleted": false, "downloadLink": "/downloads/m5t2.pdf" },
-      { "id": 503, "title": "Creating Menu Applications", "isCompleted": false, "downloadLink": "/downloads/m5t3.pdf" },
-      { "id": 504, "title": "Analysing Visual Basic Data", "isCompleted": false, "downloadLink": "/downloads/m5t4.pdf" }
-    ]
-  },
-  {
-    "moduleTitle": "MODULE 6 - Areas of Application of Computers",
-    "expanded": false,
-    "topics": [
-      { "id": 601, "title": "Applications in Education", "isCompleted": false, "downloadLink": "/downloads/m6t1.pdf" },
-      { "id": 602, "title": "Applications in Business and Industry", "isCompleted": false, "downloadLink": "/downloads/m6t2.pdf" },
-      { "id": 603, "title": "Applications in Government, Science, Engineering, Transport, Communications, Recreation, Military", "isCompleted": false, "downloadLink": "/downloads/m6t3.pdf" }
-    ]
-  },
-  {
-    "moduleTitle": "MODULE 7 - Threats to the Computer",
-    "expanded": false,
-    "topics": [
-      { "id": 701, "title": "Computer Viruses and Related Threats", "isCompleted": false, "downloadLink": "/downloads/m7t1.pdf" }
-    ]
-  }
+  { "moduleTitle": "MODULE 1 - Understanding the Computer", "expanded": true },
+  { "moduleTitle": "MODULE 2 - Computer Hardware", "expanded": false },
+  { "moduleTitle": "MODULE 3 - Computer Software", "expanded": false },
+  { "moduleTitle": "MODULE 4 - Programming the Computer", "expanded": false },
+  { "moduleTitle": "MODULE 5 - Visual Basic Programming", "expanded": false },
+  { "moduleTitle": "MODULE 6 - Areas of Application of Computers", "expanded": false },
+  { "moduleTitle": "MODULE 7 - Threats to the Computer", "expanded": false }
 ]

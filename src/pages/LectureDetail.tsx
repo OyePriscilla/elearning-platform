@@ -11,9 +11,9 @@ import { useParams, useHistory } from "react-router-dom";
 import lectures from "../data/lectures.json";
 
 type Lecture = {
-  id: number;
-  title: string;
-  pdf?: string;
+  lectureId: number;
+  moduleTitle: string;
+  pdf: string;
   content?: string;
 };
 
@@ -22,7 +22,7 @@ const LectureDetail: React.FC = () => {
   const history = useHistory();
 
   const lecture = (lectures as Lecture[]).find(
-    l => l.id === Number(id)
+    l => l.lectureId === Number(id)
   );
 
   if (!lecture || !lecture.pdf) {
@@ -44,7 +44,7 @@ const LectureDetail: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>{lecture.title}</IonTitle>
+          <IonTitle>{lecture.moduleTitle}</IonTitle>
         </IonToolbar>
       </IonHeader>
 

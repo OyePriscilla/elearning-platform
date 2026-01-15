@@ -1,94 +1,436 @@
 [
   {
-    "id": 101,
-    "title": "Basic Concepts & The IPOS Cycle",
+  "moduleTitle": "MODULE 1 - Understanding the Computer",
+  "questions": [
+    {
+      "question": "What is the Latin origin of the word 'computer'?",
+      "options": ["Computus", "Computare", "Compumetrics", "Calculus"],
+      "correct": "Computare"
+    },
+    {
+      "question": "Which component of the CPU acts as the 'traffic cop' of data?",
+      "options": ["ALU", "Registers", "Control Unit (CU)", "RAM"],
+      "correct": "Control Unit (CU)"
+    },
+    {
+      "question": "What does the acronym GIGO stand for in computing?",
+      "options": ["General Input General Output", "Global Input Global Output", "Garbage In, Garbage Out", "Good Input, Good Output"],
+      "correct": "Garbage In, Garbage Out"
+    },
+    {
+      "question": "Which of these is considered 'volatile' memory where data is lost when power is off?",
+      "options": ["Hard Drive (HDD)", "SSD", "ROM", "Primary Storage (RAM)"],
+      "correct": "Primary Storage (RAM)"
+    },
+    {
+      "question": "Which type of software runs the computer hardware itself and serves as the base layer?",
+      "options": ["Application Software", "System Software", "Web Browsers", "Word Processors"],
+      "correct": "System Software"
+    },
+    {
+      "question": "Who is recognized as the 'Father of the Computer'?",
+      "options": ["John Napier", "Charles Babbage", "Blaise Pascal", "Herman Hollerith"],
+      "correct": "Charles Babbage"
+    },
+    {
+      "question": "Who was the first programmer, known for writing an algorithm for the Analytical Engine?",
+      "options": ["Lady Ada Lovelace", "Grace Hopper", "Priscilla Oyebade", "Marie Curie"],
+      "correct": "Lady Ada Lovelace"
+    },
+    {
+      "question": "Which technology was the defining characteristic of First Generation computers (1940-56)?",
+      "options": ["Transistors", "Integrated Circuits", "Vacuum Tubes", "Microprocessors"],
+      "correct": "Vacuum Tubes"
+    },
+    {
+      "question": "What was the first commercial computer delivered to a business client?",
+      "options": ["ENIAC", "UNIVAC", "IBM PC", "Apple Macintosh"],
+      "correct": "UNIVAC"
+    },
+    {
+      "question": "The Third Generation of computers introduced the use of:",
+      "options": ["Punched cards", "Integrated Circuits (IC)", "Vacuum Tubes", "Artificial Intelligence"],
+      "correct": "Integrated Circuits (IC)"
+    },
+    {
+      "question": "The Intel 4004 chip, developed in 1971, is an example of which generation technology?",
+      "options": ["Second Generation", "Third Generation", "Fourth Generation", "Fifth Generation"],
+      "correct": "Fourth Generation"
+    },
+    {
+      "question": "Which type of computer processes continuous data like voltage, pressure, or temperature?",
+      "options": ["Digital Computer", "Analog Computer", "Mainframe", "Supercomputer"],
+      "correct": "Analog Computer"
+    },
+    {
+      "question": "A hospital ICU monitor that measures a heartbeat (analog) and displays it as numbers (digital) is a:",
+      "options": ["Supercomputer", "Minicomputer", "Hybrid Computer", "Special Purpose Computer"],
+      "correct": "Hybrid Computer"
+    },
+    {
+      "question": "Which classification of computer is designed to perform a specific, single task like an ATM or traffic light?",
+      "options": ["General Purpose", "Special Purpose", "Mainframe", "Workstation"],
+      "correct": "Special Purpose"
+    },
+    {
+      "question": "Which type of computer supports hundreds or thousands of users simultaneously and is used by banks and airlines?",
+      "options": ["Microcomputer", "Minicomputer", "Mainframe Computer", "Analog Computer"],
+      "correct": "Mainframe Computer"
+    },
+    {
+      "question": "What is the fastest and most powerful type of computer in the world, used for weather forecasting?",
+      "options": ["Mainframe", "Supercomputer", "Server", "Workstation"],
+      "correct": "Supercomputer"
+    },
+    {
+      "question": "According to the module, what is a primary limitation of a computer?",
+      "options": ["It is too slow", "It has no I.Q. and cannot think on its own", "It is inaccurate", "It cannot store large amounts of data"],
+      "correct": "It has no I.Q. and cannot think on its own"
+    },
+    {
+      "question": "In the IPOS cycle, what is the 'intangible' output displayed on a screen called?",
+      "options": ["Hard Copy", "Soft Copy", "Raw Data", "Binary"],
+      "correct": "Soft Copy"
+    },
+    {
+      "question": "The ability of a computer to perform different tasks, like playing music and then solving math, is called:",
+      "options": ["Diligence", "Accuracy", "Versatility", "Speed"],
+      "correct": "Versatility"
+    },
+    {
+      "question": "Which future computing trend involves everyday objects like smart fridges being connected to the internet?",
+      "options": ["Cloud Computing", "Internet of Things (IoT)", "Quantum Computing", "Parallel Processing"],
+      "correct": "Internet of Things (IoT)"
+    }
+  ]
+},
+  {
+  "moduleTitle": "MODULE 2 - Computer Hardware",
+  "questions": [
+    {
+      "question": "Which architecture, established in 1945, serves as the foundation for almost all modern computer systems?",
+      "options": ["Harvard Architecture", "Von Neumann Architecture", "ARM Architecture", "RISC Architecture"],
+      "correct": "Von Neumann Architecture"
+    },
+    {
+      "question": "Which component is described as the 'central hub' that allows all other hardware components to communicate?",
+      "options": ["CPU", "Hard Drive", "Motherboard", "Power Supply Unit"],
+      "correct": "Motherboard"
+    },
+    {
+      "question": "The CPU consists of two primary logic units. What is the role of the Control Unit (CU)?",
+      "options": ["Performing mathematical calculations", "Directing operation and decoding instructions", "Storing long-term data files", "Regulating voltage from the wall outlet"],
+      "correct": "Directing operation and decoding instructions"
+    },
+    {
+      "question": "In the context of 2026 performance standards, what is considered a flagship high-end CPU clock speed?",
+      "options": ["2.4 GHz", "4.0 GHz", "5.2 GHz", "6.2 GHz"],
+      "correct": "6.2 GHz"
+    },
+    {
+      "question": "What does it mean for RAM to be 'volatile' memory?",
+      "options": ["It is prone to physical damage", "Data is lost when power is removed", "It can be read but never written to", "It is stored on a mechanical spinning disk"],
+      "correct": "Data is lost when power is removed"
+    },
+    {
+      "question": "Which feature is a technical distinction of the DDR5 RAM standard compared to DDR4?",
+      "options": ["Lower data transfer rates", "Mechanical design symmetry", "Power Management on the Module (PMIC)", "Non-volatile storage capabilities"],
+      "correct": "Power Management on the Module (PMIC)"
+    },
+    {
+      "question": "What is the primary function of the CMOS battery on a motherboard?",
+      "options": ["To provide emergency power for the CPU", "To maintain system time and BIOS settings", "To recharge the laptop's main battery", "To act as a secondary storage device"],
+      "correct": "To maintain system time and BIOS settings"
+    },
+    {
+      "question": "Which part of the System Bus is responsible for specifying the memory location where data should be sent?",
+      "options": ["Data Bus", "Control Bus", "Address Bus", "Expansion Bus"],
+      "correct": "Address Bus"
+    },
+    {
+      "question": "Integrated Graphics (iGPU) differ from Dedicated Graphics (dGPU) because they:",
+      "options": ["Have their own independent cooling system", "Are separate physical cards in PCIe slots", "Share system RAM for video tasks", "Are significantly faster for high-end gaming"],
+      "correct": "Share system RAM for video tasks"
+    },
+    {
+      "question": "A Power Supply Unit (PSU) with an '80 Plus Gold' rating indicates its level of:",
+      "options": ["Maximum Wattage capacity", "Physical Size and form factor", "Electrical Efficiency", "Cable Durability and length"],
+      "correct": "Electrical Efficiency"
+    },
+    {
+      "question": "Which of the following is categorized as an 'Optical' input device in the slides?",
+      "options": ["Mechanical Keyboard", "Microphone", "Document Scanner", "Trackpad"],
+      "correct": "Document Scanner"
+    },
+    {
+      "question": "What is the primary advantage of OLED monitor technology over standard LED-backlit LCDs?",
+      "options": ["Lower overall manufacturing cost", "Infinite contrast via self-emissive pixels", "Higher peak brightness in all conditions", "Complete immunity to screen burn-in"],
+      "correct": "Infinite contrast via self-emissive pixels"
+    },
+    {
+      "question": "According to the 2026 resolution trends, what are the dimensions for a 4K (Ultra HD) display?",
+      "options": ["1920 x 1080", "2560 x 1440", "3840 x 2160", "7680 x 4320"],
+      "correct": "3840 x 2160"
+    },
+    {
+      "question": "Which 2026 connectivity standard provides speeds up to 120 Gbps using a USB Type-C connector?",
+      "options": ["USB 4 (v2)", "Bluetooth 5.4", "Thunderbolt 5", "HDMI 2.1"],
+      "correct": "Thunderbolt 5"
+    },
+    {
+      "question": "What is 'Thermal Throttling' in a computer system?",
+      "options": ["The cooling fans stopping completely", "Hardware slowing itself down to reduce heat", "Using liquid nitrogen for cooling", "A software utility for monitoring temperature"],
+      "correct": "Hardware slowing itself down to reduce heat"
+    },
+    {
+      "question": "An Uninterruptible Power Supply (UPS) is superior to a basic surge protector because it provides:",
+      "options": ["Extra USB ports for peripheral charging", "Emergency battery power for safe shutdowns", "Faster internet speeds via line conditioning", "Direct cooling for the CPU"],
+      "correct": "Emergency battery power for safe shutdowns"
+    },
+    {
+      "question": "In the Fetch-Decode-Execute-Store cycle, what happens during the 'Decode' stage?",
+      "options": ["The CPU retrieves data from RAM", "The Control Unit interprets the instruction", "The ALU performs the math calculation", "The result is written back to a register"],
+      "correct": "The Control Unit interprets the instruction"
+    },
+    {
+      "question": "What is the primary function of a modern Neural Processing Unit (NPU)?",
+      "options": ["Rendering 3D graphics for video games", "Accelerating local AI and LLM tasks efficiently", "Managing the wireless network connection", "Increasing the storage capacity of the SSD"],
+      "correct": "Accelerating local AI and LLM tasks efficiently"
+    },
+    {
+      "question": "According to the maintenance slide, how often should thermal paste typically be replaced?",
+      "options": ["Every month", "Every 2-3 years", "Every 10 years", "Only if the CPU is upgraded"],
+      "correct": "Every 2-3 years"
+    },
+    {
+      "question": "Which connectivity standard is cited for 2026 as the high-speed wireless standard?",
+      "options": ["Wi-Fi 5", "Wi-Fi 6E", "Wi-Fi 7", "Bluetooth 6.0"],
+      "correct": "Wi-Fi 7"
+    }
+  ]
+},
+  {
+  "moduleTitle": "MODULE 3 - Computer Software",
+  "questions": [
+    {
+      "question": "What is defined as a collection of data or computer instructions that tell the computer how to work?",
+      "options": ["Hardware", "Software", "CPU", "SSD"],
+      "correct": "Software"
+    },
+    {
+      "question": "According to the lecture, if hardware is the physical body, software represents the _____ of the machine.",
+      "options": ["Heart", "Soul", "Mind", "Skeleton"],
+      "correct": "Mind"
+    },
+    {
+      "question": "Which component provides raw processing power, storage, and electrical infrastructure?",
+      "options": ["Software", "Kernel", "Hardware", "Operating System"],
+      "correct": "Hardware"
+    },
+    {
+      "question": "What tools are used to translate high-level human requirements into binary sequences (0s and 1s)?",
+      "options": ["Compilers and Interpreters", "Browsers and Apps", "Firmware and BIOS", "SaaS and Cloud"],
+      "correct": "Compilers and Interpreters"
+    },
+    {
+      "question": "Which era in the evolution of software is associated with 'AI Agents'?",
+      "options": ["1950s", "1980s", "2000s", "2026"],
+      "correct": "2026"
+    },
+    {
+      "question": "In the visualization of interaction layers, which layer is the human-computer interaction point?",
+      "options": ["Hardware Layer", "Operating System", "Application Layer", "User Layer"],
+      "correct": "User Layer"
+    },
+    {
+      "question": "Which layer is responsible for managing memory, files, and resources?",
+      "options": ["Operating System", "User Layer", "Application Layer", "Hardware Layer"],
+      "correct": "Operating System"
+    },
+    {
+      "question": "What is the specific class of software that provides low-level control for a device's hardware?",
+      "options": ["Application Software", "Firmware", "SaaS", "Open Source"],
+      "correct": "Firmware"
+    },
+    {
+      "options": ["Linux", "VLC", "BIOS or UEFI", "Photoshop"],
+      "question": "Which of the following is an example of firmware?",
+      "correct": "BIOS or UEFI"
+    },
+    {
+      "question": "What type of software has publicly accessible source code and allows freedom to modify and redistribute?",
+      "options": ["Proprietary", "SaaS", "Open Source", "Perpetual"],
+      "correct": "Open Source"
+    },
+    {
+      "question": "Which of these is an example of Open Source software mentioned in the text?",
+      "options": ["Windows", "Photoshop", "Linux", "macOS"],
+      "correct": "Linux"
+    },
+    {
+      "question": "Software that is owned by a vendor with restricted modification and trade secret code is called:",
+      "options": ["Open Source", "Proprietary", "Firmware", "Agentic"],
+      "correct": "Proprietary"
+    },
+    {
+      "question": "Which software licensing model uses a 'Subscription' payment type and is hosted on the 'Vendor Cloud'?",
+      "options": ["Perpetual", "SaaS", "Agentic", "Open Source"],
+      "correct": "SaaS"
+    },
+    {
+      "question": "The 'Perpetual' licensing model is typically targeted at:",
+      "options": ["AI Assistants", "General Users", "Legacy Systems", "Cloud Enterprise"],
+      "correct": "Legacy Systems"
+    },
+    {
+      "question": "Which 2026 licensing model is 'Token-based' with 'Usage/Pay-per-Compute' payment?",
+      "options": ["SaaS", "Proprietary", "Agentic", "Perpetual"],
+      "correct": "Agentic"
+    },
+    {
+      "question": "What was the primary method of software input in the 1950s?",
+      "options": ["GUI", "Punch Cards", "Cloud Web", "AI Agents"],
+      "correct": "Punch Cards"
+    },
+    {
+      "question": "Which layer represents the 'physical silicon execution'?",
+      "options": ["User Layer", "Application Layer", "Operating System", "Hardware Layer"],
+      "correct": "Hardware Layer"
+    },
+    {
+      "question": "Software that provides productivity and solves specific tasks belongs to the:",
+      "options": ["Application Layer", "Kernel Layer", "Hardware Layer", "Firmware Layer"],
+      "correct": "Application Layer"
+    },
+    {
+      "question": "What provides the initial bootstrap instructions when you press the power button?",
+      "options": ["Application Software", "The Kernel", "BIOS/UEFI", "SaaS"],
+      "correct": "BIOS/UEFI"
+    },
+    {
+      "question": "Which of the following is categorized as Proprietary software?",
+      "options": ["Linux", "VLC", "Photoshop", "Ubuntu"],
+      "correct": "Photoshop"
+    }
+  ]
+},
+  {
+    "moduleTitle": "MODULE 4 - Programming the Computer",
     "questions": [
       {
-        "question": "From which Latin word is the term 'computer' derived?",
-        "options": ["Computus", "Computare", "Computara", "Compumetre"],
-        "correct": "Computare"
+        "question": "Which is a programming language?",
+        "options": ["HTML", "Python", "HTTP", "USB"],
+        "correct": "Python"
       },
       {
-        "question": "Which principle describes how a computer functions?",
-        "options": ["GIGO Cycle", "CPU Cycle", "IPOS Cycle", "RAM Cycle"],
-        "correct": "IPOS Cycle"
+        "question": "Flowcharts are used for:",
+        "options": ["Programming logic", "Hardware design", "Data storage", "Internet browsing"],
+        "correct": "Programming logic"
       },
       {
-        "question": "What is defined as raw, unprocessed facts and figures?",
-        "options": ["Information", "Programs", "Data", "Output"],
-        "correct": "Data"
+        "question": "An algorithm is defined as:",
+        "options": ["A step-by-step procedure", "A programming language", "A software", "A network protocol"],
+        "correct": "A step-by-step procedure"
       },
       {
-        "question": "Which of the following is an example of an input device?",
-        "options": ["Printer", "Monitor", "Scanner", "Speaker"],
-        "correct": "Scanner"
+        "question": "Which of these is a high-level language?",
+        "options": ["Assembly", "C++", "Machine code", "Binary code"],
+        "correct": "C++"
       },
       {
-        "question": "Which part of the CPU acts as the 'traffic cop' of data?",
-        "options": ["Arithmetic Logic Unit (ALU)", "Control Unit (CU)", "Registers", "Hard Drive"],
-        "correct": "Control Unit (CU)"
-      },
-      {
-        "question": "What type of output is intangible and exists only electronically?",
-        "options": ["Hard Copy", "Soft Copy", "Physical Copy", "Analog Copy"],
-        "correct": "Soft Copy"
-      },
-      {
-        "question": "RAM is considered what type of storage?",
-        "options": ["Primary/Volatile", "Primary/Non-volatile", "Secondary/Volatile", "Secondary/Non-volatile"],
-        "correct": "Primary/Volatile"
-      },
-      {
-        "question": "Which acronym describes the idea that bad input leads to bad results?",
-        "options": ["FIFO", "GIGO", "MIPS", "BIPS"],
-        "correct": "GIGO"
-      },
-      {
-        "question": "The ability of a computer to perform different tasks, like playing music and solving math, is called:",
-        "options": ["Diligence", "Accuracy", "Versatility", "Speed"],
-        "correct": "Versatility"
-      },
-      {
-        "question": "A computer has no I.Q. and cannot think on its own; this is considered a:",
-        "options": ["Strength", "Characteristic", "Limitation", "Skill"],
-        "correct": "Limitation"
+        "question": "Debugging is the process of:",
+        "options": ["Finding and fixing errors", "Writing code", "Compiling code", "Running software"],
+        "correct": "Finding and fixing errors"
       }
     ]
   },
   {
-    "id": 102,
-    "title": "Historical Overview of the Computer",
+    "moduleTitle": "MODULE 5 - Visual Basic Programming",
     "questions": [
       {
-        "question": "Who is known as the father of the computer?",
-        "options": ["Alan Turing", "Charles Babbage", "John von Neumann", "Steve Jobs"],
-        "correct": "Charles Babbage"
+        "question": "Which window shows all VB controls?",
+        "options": ["Project Window", "Form Designer", "Toolbox", "Solution Explorer"],
+        "correct": "Toolbox"
       },
       {
-        "question": "Which generation of computers used vacuum tubes?",
-        "options": ["First Generation", "Second Generation", "Third Generation", "Fourth Generation"],
-        "correct": "First Generation"
+        "question": "The main container for VB forms is called:",
+        "options": ["Form", "Module", "Class", "Project"],
+        "correct": "Form"
       },
       {
-        "question": "ENIAC was primarily used for:",
-        "options": ["Word Processing", "Scientific Calculations", "Gaming", "Internet Communication"],
-        "correct": "Scientific Calculations"
+        "question": "Visual Basic uses which type of programming?",
+        "options": ["Event-driven", "Procedural", "Functional", "Logic-based"],
+        "correct": "Event-driven"
+      },
+      {
+        "question": "Menu applications are created using:",
+        "options": ["MenuStrip control", "Button control", "Label control", "Textbox"],
+        "correct": "MenuStrip control"
+      },
+      {
+        "question": "Analyzing VB data is done using:",
+        "options": ["DataGridView", "Label", "Textbox", "Button"],
+        "correct": "DataGridView"
       }
     ]
   },
   {
-    "id": 103,
-    "title": "Classification of Computers",
+    "moduleTitle": "MODULE 6 - Areas of Application of Computers",
     "questions": [
       {
-        "question": "Which of these is considered a supercomputer?",
-        "options": ["IBM Summit", "Dell Inspiron", "MacBook Pro", "Raspberry Pi"],
-        "correct": "IBM Summit"
+        "question": "Computers in education are used for:",
+        "options": ["E-learning", "Exams", "Administration", "All of the above"],
+        "correct": "All of the above"
       },
       {
-        "question": "Personal computers are also called:",
-        "options": ["Mainframes", "Microcomputers", "Supercomputers", "Minicomputers"],
-        "correct": "Microcomputers"
+        "question": "Business uses of computers include:",
+        "options": ["Accounting", "Inventory management", "Communication", "All"],
+        "correct": "All"
+      },
+      {
+        "question": "Scientific applications include:",
+        "options": ["Simulations", "Research", "Data analysis", "All of the above"],
+        "correct": "All of the above"
+      },
+      {
+        "question": "Government uses of computers include:",
+        "options": ["Census", "Tax management", "Record keeping", "All of the above"],
+        "correct": "All of the above"
+      },
+      {
+        "question": "Military applications of computers include:",
+        "options": ["Surveillance", "Weapons control", "Communication", "All of the above"],
+        "correct": "All of the above"
+      }
+    ]
+  },
+  {
+    "moduleTitle": "MODULE 7 - Threats to the Computer",
+    "questions": [
+      {
+        "question": "Computer viruses are:",
+        "options": ["Malicious software", "Hardware devices", "Programming languages", "None"],
+        "correct": "Malicious software"
+      },
+      {
+        "question": "Phishing is:",
+        "options": ["Fraudulent attempt to get sensitive info", "Virus type", "Programming method", "OS error"],
+        "correct": "Fraudulent attempt to get sensitive info"
+      },
+      {
+        "question": "Spyware is:",
+        "options": ["Software that monitors user activity", "Antivirus", "Hardware tool", "Input device"],
+        "correct": "Software that monitors user activity"
+      },
+      {
+        "question": "Firewall helps to:",
+        "options": ["Protect network", "Write programs", "Store data", "Increase speed"],
+        "correct": "Protect network"
+      },
+      {
+        "question": "Trojan horse is:",
+        "options": ["Malware disguised as legitimate software", "A type of virus scanner", "Programming tool", "Hardware device"],
+        "correct": "Malware disguised as legitimate software"
       }
     ]
   }

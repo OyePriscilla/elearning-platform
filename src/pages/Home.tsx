@@ -10,19 +10,15 @@ import {
   IonIcon,
   IonAvatar,
   IonCard,
-  IonCardHeader,
-  IonCardTitle,
-  IonCardSubtitle,
   IonCardContent,
-  IonSearchbar,
+  IonLabel,
   IonGrid,
   IonRow,
   IonCol,
-  IonLabel,
   IonList,
   IonItem,
   IonBadge,
-  IonToast
+  IonToast,
 } from '@ionic/react';
 import {
   notificationsOutline,
@@ -30,22 +26,20 @@ import {
   hardwareChipOutline,
   cogOutline,
   codeSlash,
-  leafOutline
+  leafOutline,
+  documentTextOutline
 } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
 import './Home.css';
 
 interface Module {
+  id: number;
   name: string;
   title: string;
   icon: string;
-}
-
-interface HighlightedTopic {
-  title: string;
-  module: string;
-  detail: string;
+  currentWeek?: boolean;
+  label?: string; // e.g., "Lecture & Assignment this week"
 }
 
 const Home: React.FC = () => {
@@ -54,45 +48,42 @@ const Home: React.FC = () => {
   const [searchText, setSearchText] = useState('');
   const [showToast, setShowToast] = useState(false);
 
-  /* ---- Simulated progress ---- */
-  const progressData = 45;
-  const currentModule = 'MODULE 1 - Understanding the Computer';
-  const currentTopic = 'Historical Overview of the Computer';
-
-  /* ---- Modules ---- */
-  const majorModules: Module[] = [
-    { name: 'Module 1', title: 'Understanding the Computer', icon: hardwareChipOutline },
-    { name: 'Module 2', title: 'Computer Hardware', icon: cogOutline },
-    { name: 'Module 3', title: 'Computer Software', icon: cogOutline },
-    { name: 'Module 4', title: 'Programming', icon: codeSlash },
-    { name: 'Module 5', title: 'Visual Basic Programming', icon: codeSlash },
-    { name: 'Module 6', title: 'Applications', icon: leafOutline },
-    { name: 'Module 7', title: 'Threats & Security', icon: hardwareChipOutline }
+  /* ---- Modules List ---- */
+  const modules: Module[] = [
+    { id: 1, name: 'Module 1', title: 'Understanding the Computer', icon: hardwareChipOutline },
+    { id: 2, name: 'Module 2', title: 'Computer Hardware', icon: cogOutline },
+    { id: 3, name: 'Module 3', title: 'Computer Software', icon: cogOutline, currentWeek: true, label: 'Current' },
+    { id: 4, name: 'Module 4', title: 'Programming', icon: codeSlash },
+    { id: 5, name: 'Module 5', title: 'Visual Basic Programming', icon: codeSlash },
+    { id: 6, name: 'Module 6', title: 'Applications', icon: leafOutline },
+    { id: 7, name: 'Module 7', title: 'Threats & Security', icon: hardwareChipOutline }
   ];
 
-  /* ---- Highlighted Topics ---- */
-  const highlightedTopics: HighlightedTopic[] = [
-    { title: 'Peripheral Devices', module: 'Module 2', detail: 'Hardware Components Part 1 & 2' },
-    { title: 'Visual Basic Menus', module: 'Module 5', detail: 'Creating Menu Applications' },
-    { title: 'Computer Viruses', module: 'Module 7', detail: 'Types & Prevention' }
-  ];
+  /* ---- Current Week Assignment ---- */
+  const currentWeekAssignment = {
+    title: 'Module 3 ',
+    description: 'Computer Software',
+    moduleId: 3,
+  };
 
   /* ---- Search Filters ---- */
-  const filteredModules = majorModules.filter(m =>
-    m.name.toLowerCase().includes(searchText.toLowerCase()) ||
-    m.title.toLowerCase().includes(searchText.toLowerCase())
-  );
-
-  const filteredTopics = highlightedTopics.filter(t =>
-    t.title.toLowerCase().includes(searchText.toLowerCase()) ||
-    t.detail.toLowerCase().includes(searchText.toLowerCase()) ||
-    t.module.toLowerCase().includes(searchText.toLowerCase())
+  const filteredModules = modules.filter(
+    m =>
+      m.name.toLowerCase().includes(searchText.toLowerCase()) ||
+      m.title.toLowerCase().includes(searchText.toLowerCase())
   );
 
   /* ---- Handlers ---- */
   const handleNotificationsClick = () => setShowToast(true);
-  const handleAvatarClick = () => history.push('/profile');
-  const handleModuleClick = (module: Module) => history.push('/notes');
+  const handleAvatarClick = () => history.push('/dashboard');
+
+  const handleModuleClick = (module: Module) => {
+    history.push(`/lecture/${module.id}`);
+  };
+
+  const handleAssignmentClick = () => {
+    history.push(`/assignment`);
+  };
 
   return (
     <IonPage>
@@ -113,61 +104,27 @@ const Home: React.FC = () => {
             </IonButton>
           </IonButtons>
         </IonToolbar>
-
-        <IonToolbar>
-          <IonSearchbar
-            value={searchText}
-            onIonChange={e => setSearchText(e.detail.value!)}
-            placeholder="Search modules or topics"
-            animated
-          />
-        </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
-        {/* ---- Progress Card ---- */}
-        <IonCard color="tertiary" className="ion-margin">
-          <IonCardHeader>
-            <IonCardSubtitle>{currentModule}</IonCardSubtitle>
-            <IonCardTitle>{currentTopic}</IonCardTitle>
-          </IonCardHeader>
-          <IonCardContent>
-            <div className="progress-track">
-              <div
-                className="progress-fill"
-                style={{ width: `${progressData}%` }}
-              />
-            </div>
-            <p className="progress-text">{progressData}% Complete</p>
-          </IonCardContent>
-        </IonCard>
+      <IonContent fullscreen className="ion-padding">
 
-        {/* ---- Modules ---- */}
+        {/* ---- Modules Section ---- */}
         <h2 className="ion-padding-start">Modules</h2>
-
-        <IonGrid className="ion-padding-horizontal">
+        <IonGrid>
           <IonRow>
             {filteredModules.map(mod => (
-              <IonCol
-                key={mod.name}
-                size="6"
-                size-md="4"
-                size-lg="3"
-              >
+              <IonCol key={mod.id} size="6" size-md="4">
                 <IonCard
                   button
-                  className="module-card ion-text-center"
+                  className={`module-card ${mod.currentWeek ? 'current-week' : ''}`}
                   onClick={() => handleModuleClick(mod)}
                 >
-                  <IonCardContent>
-                    <IonIcon
-                      icon={mod.icon as any}
-                      size="large"
-                      className="module-icon"
-                    />
-                    <IonLabel className="module-label">
+                  <IonCardContent className="ion-text-center">
+                    <IonIcon icon={mod.icon as any} size="large" className="module-icon" />
+                    <IonLabel>
                       <strong>{mod.name}</strong>
                       <p>{mod.title}</p>
+                      {mod.label && <IonBadge color="success">{mod.label}</IonBadge>}
                     </IonLabel>
                   </IonCardContent>
                 </IonCard>
@@ -176,36 +133,16 @@ const Home: React.FC = () => {
           </IonRow>
         </IonGrid>
 
-        {/* ---- Highlighted Topics ---- */}
-        <h2 className="ion-padding-start ion-padding-top">
-          Highlighted Topics
-        </h2>
-
-        <IonList lines="full" className="ion-padding-horizontal">
-          {filteredTopics.map(topic => (
-            <IonItem
-              key={topic.title}
-              button
-              detail
-              onClick={() =>
-                handleModuleClick({
-                  name: topic.module,
-                  title: topic.detail,
-                  icon: bookOutline
-                })
-              }
-            >
-              <IonIcon icon={bookOutline} slot="start" color="primary" />
-              <IonLabel>
-                <h3>{topic.title}</h3>
-                <p>{topic.detail}</p>
-              </IonLabel>
-              <IonBadge slot="end" color="light">
-                {topic.module}
-              </IonBadge>
-            </IonItem>
-          ))}
-        </IonList>
+        {/* ---- Current Week Assignment ---- */}
+        <h2 className="ion-padding-start ion-padding-top">Assignment This Week</h2>
+        <IonCard button onClick={handleAssignmentClick}>
+          <IonCardContent>
+            <IonLabel>
+              <p>{currentWeekAssignment.description}</p>
+            </IonLabel>
+            <IonBadge color="primary">Module {currentWeekAssignment.moduleId}</IonBadge>
+          </IonCardContent>
+        </IonCard>
 
         {/* ---- Toast ---- */}
         <IonToast
@@ -215,6 +152,7 @@ const Home: React.FC = () => {
           duration={2000}
           color="primary"
         />
+
       </IonContent>
     </IonPage>
   );

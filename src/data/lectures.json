@@ -1,15 +1,44 @@
 [
   {
-    "id": 101,
-    "title": "Basic Concepts",
-  "pdf": "https://cdn.jsdelivr.net/gh/OyePriscilla/COS-101-Lecture-Files@main/COS%20101_%20INTRODUCTION%20TO%20COMPUTER%20SCIENCE.pdf",
-    "content": " Understanding the Computer"
+    "moduleTitle": "MODULE 1 - Understanding the Computer",
+    "lectureId": 1,
+    "pdf": "https://cdn.jsdelivr.net/gh/OyePriscilla/COS-101-Lecture-Files@main/COS%20101_%20INTRODUCTION%20TO%20COMPUTER%20SCIENCE.pdf",
+    "content": "Introduction to computers, history, and basic concepts."
   },
   {
-    "id": 401,
-    "title": "Computer Languages",
+  "moduleTitle": "MODULE 2 - Computer Hardware",
+  "lectureId": 2,
+  "pdf": "https://cdn.jsdelivr.net/gh/OyePriscilla/COS-101-Lecture-Files@main/Computer%20Hardware.pdf",
+  "content": "Overview of hardware components."
+},
+  {
+    "moduleTitle": "MODULE 3 - Computer Software",
+    "lectureId": 3,
+    "pdf": "https://cdn.jsdelivr.net/gh/OyePriscilla/COS-101-Lecture-Files@main/Computer%20Software%20%26%20Categories.pdf",
+    "content": "Introduction to software, types, and usage."
+  },
+  {
+    "moduleTitle": "MODULE 4 - Programming the Computer",
+    "lectureId": 4,
     "pdf": "/downloads/m4t1.pdf",
-    "ppt": "/downloads/m4t1.pptx",
     "content": "Overview of programming languages and their uses."
+  },
+  {
+    "moduleTitle": "MODULE 5 - Visual Basic Programming",
+    "lectureId": 5,
+    "pdf": "/downloads/m5t1.pdf",
+    "content": "Getting started with Visual Basic."
+  },
+  {
+    "moduleTitle": "MODULE 6 - Areas of Application of Computers",
+    "lectureId": 6,
+    "pdf": "/downloads/m6t1.pdf",
+    "content": "Applications in education, business, and government."
+  },
+  {
+    "moduleTitle": "MODULE 7 - Threats to the Computer",
+    "lectureId": 7,
+    "pdf": "/downloads/m7t1.pdf",
+    "content": "Computer viruses, malware, and prevention."
   }
 ]

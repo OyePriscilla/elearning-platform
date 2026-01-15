@@ -42,7 +42,6 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 import '@ionic/react/css/palettes/dark.system.css';
 import './theme/variables.css';
-import PublicRoute from './pages/PublicRoute';
 import VerifyEmail from './pages/VerifyEmail';
 
 setupIonicReact();
@@ -61,6 +60,7 @@ const AppTabs: React.FC = () => {
         <Route exact path="/confirm-email" component={ConfirmEmail} />
         <Route path="/lecture/:id" component={LectureDetail} exact />
         <Route exact path="/verify-email" component={VerifyEmail} />
+
 
 
 

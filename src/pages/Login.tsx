@@ -16,13 +16,21 @@ import {
   IonText,
   IonSpinner,
   IonToast,
+  IonIcon,
 } from "@ionic/react";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { eyeOutline, eyeOffOutline } from 'ionicons/icons';
+
 
 const allowedEmails = [
   "livingsambank@gmail.com",
   "oyebadepriscilla22@gmail.com",
+  "ofoegbupeter2020@gmail.com",
+  "henrycjonathan@gmail.com",
+  "ntumary3@gmail.com",
+  "temiloluwatemidayo29@gmail.com",
+  "fortunec930@gmail.com",
 ];
 
 const Login: React.FC = () => {
@@ -34,6 +42,10 @@ const Login: React.FC = () => {
   const [error, setError] = useState("");
   const [info, setInfo] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => setShowPassword(prev => !prev);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
@@ -117,10 +129,22 @@ const Login: React.FC = () => {
               <IonInput type="email" value={email} onIonChange={e => setEmail(e.detail.value!)} />
             </IonItem>
 
-            <IonItem className="form-item">
-              <IonLabel position="stacked">Password</IonLabel>
-              <IonInput type="password" value={password} onIonChange={e => setPassword(e.detail.value!)} />
-            </IonItem>
+           <IonItem className="form-item">
+          <IonLabel position="stacked">Password</IonLabel>
+          <IonInput
+            type={showPassword ? 'text' : 'password'}
+            value={password}
+            onIonChange={e => setPassword(e.detail.value!)}
+          />
+          <IonButton
+            fill="clear"
+            slot="end"
+            onClick={toggleShowPassword}
+            style={{ marginRight: 0 }}
+          >
+            <IonIcon icon={showPassword ? eyeOffOutline : eyeOutline} />
+          </IonButton>
+        </IonItem>
 
             {error && <IonText color="danger" className="ion-padding-top">{error}</IonText>}
             {info && <IonText color="success" className="ion-padding-top">{info}</IonText>}
@@ -141,6 +165,5 @@ const Login: React.FC = () => {
       </IonContent>
     </IonPage>
   );
-};
-
+}
 export default Login;
