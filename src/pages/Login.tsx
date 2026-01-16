@@ -31,6 +31,10 @@ const allowedEmails = [
   "ntumary3@gmail.com",
   "temiloluwatemidayo29@gmail.com",
   "fortunec930@gmail.com",
+  "emmanuelgbesi55@gmail.com",
+  "jdare945@gmail",
+  "moyinoluwablessing388@gmail.com",
+  "temitopefaruq8@gmail.com"
 ];
 
 const Login: React.FC = () => {
@@ -129,22 +133,22 @@ const Login: React.FC = () => {
               <IonInput type="email" value={email} onIonChange={e => setEmail(e.detail.value!)} />
             </IonItem>
 
-           <IonItem className="form-item">
-          <IonLabel position="stacked">Password</IonLabel>
-          <IonInput
-            type={showPassword ? 'text' : 'password'}
-            value={password}
-            onIonChange={e => setPassword(e.detail.value!)}
-          />
-          <IonButton
-            fill="clear"
-            slot="end"
-            onClick={toggleShowPassword}
-            style={{ marginRight: 0 }}
-          >
-            <IonIcon icon={showPassword ? eyeOffOutline : eyeOutline} />
-          </IonButton>
-        </IonItem>
+            <IonItem className="form-item">
+              <IonLabel position="stacked">Password</IonLabel>
+              <IonInput
+                type={showPassword ? 'text' : 'password'}
+                value={password}
+                onIonChange={e => setPassword(e.detail.value!)}
+              />
+              <IonButton
+                fill="clear"
+                slot="end"
+                onClick={toggleShowPassword}
+                style={{ marginRight: 0 }}
+              >
+                <IonIcon icon={showPassword ? eyeOffOutline : eyeOutline} />
+              </IonButton>
+            </IonItem>
 
             {error && <IonText color="danger" className="ion-padding-top">{error}</IonText>}
             {info && <IonText color="success" className="ion-padding-top">{info}</IonText>}
