@@ -32,7 +32,7 @@ const allowedEmails = [
   "temiloluwatemidayo29@gmail.com",
   "fortunec930@gmail.com",
   "emmanuelgbesi55@gmail.com",
-  "jdare945@gmail",
+  "jdare945@gmail.com",
   "moyinoluwablessing388@gmail.com",
   "temitopefaruq8@gmail.com"
 ];
