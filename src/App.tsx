@@ -61,9 +61,6 @@ const AppTabs: React.FC = () => {
         <Route path="/lecture/:id" component={LectureDetail} exact />
         <Route exact path="/verify-email" component={VerifyEmail} />
 
-
-
-
         {/* Protected Routes */}
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/profile" component={Profile} />
@@ -75,27 +72,27 @@ const AppTabs: React.FC = () => {
         {/* Default */}
         <Route exact path="/" render={() => <Redirect to="/home" />} />
       </IonRouterOutlet>
-<IonTabBar slot="bottom">
-  <IonTabButton tab="home" href="/home" disabled={!user?.emailVerified}>
-    <IonIcon icon={homeOutline} />
-    <IonLabel>Home</IonLabel>
-  </IonTabButton>
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="home" href="/home" disabled={!user?.emailVerified}>
+          <IonIcon icon={homeOutline} />
+          <IonLabel>Home</IonLabel>
+        </IonTabButton>
 
-  <IonTabButton tab="dashboard" href="/dashboard" disabled={!user?.emailVerified}>
-    <IonIcon icon={gridOutline} />
-    <IonLabel>Dashboard</IonLabel>
-  </IonTabButton>
+        <IonTabButton tab="dashboard" href="/dashboard" disabled={!user?.emailVerified}>
+          <IonIcon icon={gridOutline} />
+          <IonLabel>Dashboard</IonLabel>
+        </IonTabButton>
 
-  <IonTabButton tab="assignment" href="/assignment" disabled={!user?.emailVerified}>
-    <IonIcon icon={clipboardOutline} />
-    <IonLabel>Assignment</IonLabel>
-  </IonTabButton>
+        <IonTabButton tab="assignment" href="/assignment" disabled={!user?.emailVerified}>
+          <IonIcon icon={clipboardOutline} />
+          <IonLabel>Assignment</IonLabel>
+        </IonTabButton>
 
-  <IonTabButton tab="notes" href="/notes" disabled={!user?.emailVerified}>
-    <IonIcon icon={bookOutline} />
-    <IonLabel>Lecture Notes</IonLabel>
-  </IonTabButton>
-</IonTabBar>
+        <IonTabButton tab="notes" href="/notes" disabled={!user?.emailVerified}>
+          <IonIcon icon={bookOutline} />
+          <IonLabel>Lecture Notes</IonLabel>
+        </IonTabButton>
+      </IonTabBar>
     </IonTabs>
   );
 };
