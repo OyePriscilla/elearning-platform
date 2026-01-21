@@ -63,6 +63,7 @@ const allowedEmails = [
   "joeltemitayo123@gmail.com",
   "acquayeibukun@gmail.com",
   "viktoh033@gmail.com",
+  "lauxious001@gmail.com",
 ];
 
 const Login: React.FC = () => {
@@ -110,7 +111,7 @@ const Login: React.FC = () => {
 
       if (!user.emailVerified) {
         await auth.signOut();
-        throw new Error("Please verify your email before logging in.");
+        throw new Error("Please verify your email address. Check your inbox or spam folder and verify it before logging in.");
       }
 
       history.replace("/home");

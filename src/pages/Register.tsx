@@ -70,7 +70,7 @@ const Register: React.FC = () => {
       });
 
       setToast("Registration successful! Check your email to verify your account.");
-      setTimeout(() => history.replace("/login"), 2000);
+      setTimeout(() => history.replace("/login"), 7200);
     } catch (err: any) {
       if (err.code === "auth/email-already-in-use") {
         setToast("Email already registered");

@@ -1,0 +1,65 @@
+[debug] [2026-01-21T13:33:14.267Z] ----------------------------------------------------------------------
+[debug] [2026-01-21T13:33:14.492Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYEBADE SAMUEL\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-01-21T13:33:14.494Z] CLI Version:   14.27.0
+[debug] [2026-01-21T13:33:14.494Z] Platform:      win32
+[debug] [2026-01-21T13:33:14.495Z] Node Version:  v24.4.1
+[debug] [2026-01-21T13:33:14.496Z] Time:          Wed Jan 21 2026 14:33:14 GMT+0100 (West Africa Standard Time)
+[debug] [2026-01-21T13:33:14.497Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-21T13:33:15.120Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-21T13:33:15.121Z] > authorizing via signed-in user (oyebadepriscilla22@gmail.com)
+[debug] [2026-01-21T13:33:15.122Z] [iam] checking project e-learning-549db for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-01-21T13:33:15.128Z] Checked if tokens are valid: false, expires at: 1768997852390
+[debug] [2026-01-21T13:33:15.129Z] Checked if tokens are valid: false, expires at: 1768997852390
+[debug] [2026-01-21T13:33:15.131Z] > refreshing access token with scopes: []
+[debug] [2026-01-21T13:33:15.141Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-21T13:33:15.141Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-21T13:33:17.702Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-21T13:33:17.703Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-21T13:33:17.859Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions [none]
+[debug] [2026-01-21T13:33:17.859Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions x-goog-quota-user=projects/e-learning-549db
+[debug] [2026-01-21T13:33:17.859Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-01-21T13:33:19.747Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions 200
+[debug] [2026-01-21T13:33:19.748Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-01-21T13:33:19.749Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:33:19.750Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:33:19.751Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/e-learning-549db [none]
+[debug] [2026-01-21T13:33:21.699Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/e-learning-549db 200
+[debug] [2026-01-21T13:33:21.700Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/e-learning-549db {"projectId":"e-learning-549db","projectNumber":"421378472648","displayName":"e-learning","name":"projects/e-learning-549db","resources":{"hostingSite":"e-learning-549db"},"state":"ACTIVE","etag":"1_00820b45-f030-42c2-8f6a-0b83e7670783"}
+[info] 
+[info] === Deploying to 'e-learning-549db'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-01-21T13:33:21.725Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:33:21.725Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:33:21.726Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/e-learning-549db/versions [none]
+[debug] [2026-01-21T13:33:21.726Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/e-learning-549db/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
+[debug] [2026-01-21T13:59:29.234Z] ----------------------------------------------------------------------
+[debug] [2026-01-21T13:59:29.275Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\OYEBADE SAMUEL\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting
+[debug] [2026-01-21T13:59:29.277Z] CLI Version:   14.27.0
+[debug] [2026-01-21T13:59:29.278Z] Platform:      win32
+[debug] [2026-01-21T13:59:29.278Z] Node Version:  v24.4.1
+[debug] [2026-01-21T13:59:29.279Z] Time:          Wed Jan 21 2026 14:59:29 GMT+0100 (West Africa Standard Time)
+[debug] [2026-01-21T13:59:29.280Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-01-21T13:59:29.323Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-01-21T13:59:39.911Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-01-21T13:59:39.913Z] > authorizing via signed-in user (oyebadepriscilla22@gmail.com)
+[debug] [2026-01-21T13:59:39.913Z] [iam] checking project e-learning-549db for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-01-21T13:59:39.916Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:59:39.917Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:59:39.918Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions [none]
+[debug] [2026-01-21T13:59:39.919Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions x-goog-quota-user=projects/e-learning-549db
+[debug] [2026-01-21T13:59:39.919Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-01-21T13:59:40.561Z] *** [apiv2] error from fetch(https://firebase-public.firebaseio.com/cli.json, {"headers":{},"method":"GET"}): FetchError: request to https://firebase-public.firebaseio.com/cli.json failed, reason: getaddrinfo ENOTFOUND firebase-public.firebaseio.com
+[warn] !  Unable to fetch the CLI MOTD and remote config. This is not a fatal error, but may indicate an issue with your network connection. 
+[debug] [2026-01-21T13:59:40.625Z] Failed to fetch MOTD FirebaseError: Failed to make request to https://firebase-public.firebaseio.com/cli.json
+[debug] [2026-01-21T13:59:40.627Z] *** [apiv2] error from fetch(https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions, {"headers":{},"method":"POST","body":"{\"permissions\":[\"firebase.projects.get\",\"firebasehosting.sites.update\"]}"}): FetchError: request to https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions failed, reason: getaddrinfo ENOTFOUND cloudresourcemanager.googleapis.com
+[debug] [2026-01-21T13:59:40.628Z] [iam] error while checking permissions, command may fail: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/e-learning-549db:testIamPermissions
+[debug] [2026-01-21T13:59:40.630Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:59:40.630Z] Checked if tokens are valid: true, expires at: 1769005996703
+[debug] [2026-01-21T13:59:40.632Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/e-learning-549db [none]
+[debug] [2026-01-21T13:59:40.978Z] *** [apiv2] error from fetch(https://firebase.googleapis.com/v1beta1/projects/e-learning-549db, {"headers":{},"method":"GET","signal":{"reason":""}}): FetchError: request to https://firebase.googleapis.com/v1beta1/projects/e-learning-549db failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com
+[debug] [2026-01-21T13:59:40.980Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/e-learning-549db (original: request to https://firebase.googleapis.com/v1beta1/projects/e-learning-549db failed, reason: getaddrinfo ENOTFOUND firebase.googleapis.com)
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier
