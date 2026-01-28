@@ -67,6 +67,7 @@ const allowedEmails = [
   "ulasisi04@gmail.com",
   "agwuebuka20@gmail.com",
   "ireayomi104@gmail.com",
+  "osenilateef2009@gmail.com",
 ];
 
 const Login: React.FC = () => {
