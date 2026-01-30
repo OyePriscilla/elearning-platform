@@ -22,56 +22,6 @@ import { auth } from "../firebase";
 import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { eyeOutline, eyeOffOutline } from 'ionicons/icons';
 
-
-const allowedEmails = [
-  "livingsambank@gmail.com",
-  "oyebadepriscilla22@gmail.com",
-  "ofoegbupeter2020@gmail.com",
-  "henrycjonathan@gmail.com",
-  "ntumary3@gmail.com",
-  "temiloluwatemidayo29@gmail.com",
-  "fortunec930@gmail.com",
-  "emmanuelgbesi55@gmail.com",
-  "jdare945@gmail.com",
-  "moyinoluwablessing388@gmail.com",
-  "temitopefaruq8@gmail.com",
-  "lanreshittu37@gmail.com",
-  "abdulbasitajibola6@gmail.com",
-  "bademosimichealbamise@outlook.com",
-  "moyinoluwaoriowo81@gmail.com",
-  "krixtonjorion@gmail.com",
-  "jolayemiadegeye@gmail.com",
-  "oluwaseyishoyan@gmail.com",
-  "musamichaeleshoze@gmail.com",
-  "olumide11220@gmail.com",
-  "yusuffaroukbabatunde01@gmail.com",
-  "mariamaji4dpec@gmail.com",
-  "adebayomotunrayo040@gmail.com",
-  "miracleegbo33@gmail.com",
-  "yungzysuskid@gmail.com",
-  "lawalmuhammad821@gmail.com",
-  "athenamishael@gmail.com",
-  "adewaleadelakun95@gmail.com",
-  "jdare945@gmail.com",
-  "grantuche234@gmail.com",
-  "matthewchristopher032@gmail.com",
-  "onyedikachiezenwekwe@gmail.com",
-  "esbaba2009@gmail.com",
-  "anyatonwuchibuike2@gmail.com",
-  "musakhalid1508@gmail.com",
-  "elizabethlwplm@gmail.com",
-  "joeltemitayo123@gmail.com",
-  "acquayeibukun@gmail.com",
-  "viktoh033@gmail.com",
-  "lauxious001@gmail.com",
-  "ulasisi04@gmail.com",
-  "agwuebuka20@gmail.com",
-  "ireayomi104@gmail.com",
-  "osenilateef2009@gmail.com",
-  "fusigboyeadekoya@gmail.com",
-  "igerahmon@gmail.com",
-];
-
 const Login: React.FC = () => {
   const history = useHistory();
   const location = useLocation();
@@ -109,11 +59,6 @@ const Login: React.FC = () => {
       const user = cred.user;
 
       if (!user) throw new Error("Authentication failed.");
-
-      if (!allowedEmails.includes(user.email!)) {
-        await auth.signOut();
-        throw new Error("Your email is not authorized to access this app.");
-      }
 
       if (!user.emailVerified) {
         await auth.signOut();
