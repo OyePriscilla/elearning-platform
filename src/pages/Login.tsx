@@ -19,7 +19,7 @@ import {
   IonIcon,
 } from "@ionic/react";
 import { auth } from "../firebase";
-import { signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
+import { signInWithEmailAndPassword, sendPasswordResetEmail, sendEmailVerification } from "firebase/auth";
 import { eyeOutline, eyeOffOutline } from 'ionicons/icons';
 
 const Login: React.FC = () => {
@@ -61,8 +61,13 @@ const Login: React.FC = () => {
       if (!user) throw new Error("Authentication failed.");
 
       if (!user.emailVerified) {
+        await sendEmailVerification(user);
         await auth.signOut();
-        throw new Error("Please verify your email address. Check your inbox or spam folder and verify it before logging in.");
+
+        setInfo(
+          "Your email is not verified. A new verification link has been sent to your email. Please check your inbox or spam folder."
+        );
+        return;
       }
 
       history.replace("/home");
@@ -71,7 +76,7 @@ const Login: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   const handleResetPassword = async () => {
     setError("");
