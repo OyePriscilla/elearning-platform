@@ -207,3 +207,106 @@
     }
   ]
 },
+
+[
+    {
+      "question": "What is defined as a collection of data or computer instructions that tell the computer how to work?",
+      "options": ["Hardware", "Software", "CPU", "SSD"],
+      "correct": "Software"
+    },
+    {
+      "question": "According to the lecture, if hardware is the physical body, software represents the _____ of the machine.",
+      "options": ["Heart", "Soul", "Mind", "Skeleton"],
+      "correct": "Mind"
+    },
+    {
+      "question": "Which component provides raw processing power, storage, and electrical infrastructure?",
+      "options": ["Software", "Kernel", "Hardware", "Operating System"],
+      "correct": "Hardware"
+    },
+    {
+      "question": "What tools are used to translate high-level human requirements into binary sequences (0s and 1s)?",
+      "options": ["Compilers and Interpreters", "Browsers and Apps", "Firmware and BIOS", "SaaS and Cloud"],
+      "correct": "Compilers and Interpreters"
+    },
+    {
+      "question": "Which era in the evolution of software is associated with 'AI Agents'?",
+      "options": ["1950s", "1980s", "2000s", "2026"],
+      "correct": "2026"
+    },
+    {
+      "question": "In the visualization of interaction layers, which layer is the human-computer interaction point?",
+      "options": ["Hardware Layer", "Operating System", "Application Layer", "User Layer"],
+      "correct": "User Layer"
+    },
+    {
+      "question": "Which layer is responsible for managing memory, files, and resources?",
+      "options": ["Operating System", "User Layer", "Application Layer", "Hardware Layer"],
+      "correct": "Operating System"
+    },
+    {
+      "question": "What is the specific class of software that provides low-level control for a device's hardware?",
+      "options": ["Application Software", "Firmware", "SaaS", "Open Source"],
+      "correct": "Firmware"
+    },
+    {
+      "options": ["Linux", "VLC", "BIOS or UEFI", "Photoshop"],
+      "question": "Which of the following is an example of firmware?",
+      "correct": "BIOS or UEFI"
+    },
+    {
+      "question": "What type of software has publicly accessible source code and allows freedom to modify and redistribute?",
+      "options": ["Proprietary", "SaaS", "Open Source", "Perpetual"],
+      "correct": "Open Source"
+    },
+    {
+      "question": "Which of these is an example of Open Source software mentioned in the text?",
+      "options": ["Windows", "Photoshop", "Linux", "macOS"],
+      "correct": "Linux"
+    },
+    {
+      "question": "Software that is owned by a vendor with restricted modification and trade secret code is called:",
+      "options": ["Open Source", "Proprietary", "Firmware", "Agentic"],
+      "correct": "Proprietary"
+    },
+    {
+      "question": "Which software licensing model uses a 'Subscription' payment type and is hosted on the 'Vendor Cloud'?",
+      "options": ["Perpetual", "SaaS", "Agentic", "Open Source"],
+      "correct": "SaaS"
+    },
+    {
+      "question": "The 'Perpetual' licensing model is typically targeted at:",
+      "options": ["AI Assistants", "General Users", "Legacy Systems", "Cloud Enterprise"],
+      "correct": "Legacy Systems"
+    },
+    {
+      "question": "Which 2026 licensing model is 'Token-based' with 'Usage/Pay-per-Compute' payment?",
+      "options": ["SaaS", "Proprietary", "Agentic", "Perpetual"],
+      "correct": "Agentic"
+    },
+    {
+      "question": "What was the primary method of software input in the 1950s?",
+      "options": ["GUI", "Punch Cards", "Cloud Web", "AI Agents"],
+      "correct": "Punch Cards"
+    },
+    {
+      "question": "Which layer represents the 'physical silicon execution'?",
+      "options": ["User Layer", "Application Layer", "Operating System", "Hardware Layer"],
+      "correct": "Hardware Layer"
+    },
+    {
+      "question": "Software that provides productivity and solves specific tasks belongs to the:",
+      "options": ["Application Layer", "Kernel Layer", "Hardware Layer", "Firmware Layer"],
+      "correct": "Application Layer"
+    },
+    {
+      "question": "What provides the initial bootstrap instructions when you press the power button?",
+      "options": ["Application Software", "The Kernel", "BIOS/UEFI", "SaaS"],
+      "correct": "BIOS/UEFI"
+    },
+    {
+      "question": "Which of the following is categorized as Proprietary software?",
+      "options": ["Linux", "VLC", "Photoshop", "Ubuntu"],
+      "correct": "Photoshop"
+    }
+  ]
