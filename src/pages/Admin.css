@@ -1,0 +1,80 @@
+/* Page layout */
+.admin-page {
+  height: 100vh;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, sans-serif;
+}
+
+/* Title */
+.admin-page h1 {
+  margin-bottom: 12px;
+}
+
+/* Table wrapper */
+.table-container {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.table-header {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  background: #f4f5f8;
+  padding: 12px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Scrollable body */
+.table-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Rows */
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+
+.table-row:hover {
+  background: #fafafa;
+}
+
+/* Email */
+.email {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Score */
+.score {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* Empty state */
+.empty {
+  padding: 20px;
+  text-align: center;
+  color: #777;
+}
+
+/* Center states */
+.center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}

@@ -52,8 +52,8 @@ const Home: React.FC = () => {
   const modules: Module[] = [
     { id: 1, name: 'Module 1', title: 'Understanding the Computer', icon: hardwareChipOutline },
     { id: 2, name: 'Module 2', title: 'Computer Hardware', icon: cogOutline },
-    { id: 3, name: 'Module 3', title: 'Computer Software', icon: cogOutline, currentWeek: true, label: 'Current' },
-    { id: 4, name: 'Module 4', title: 'Programming', icon: codeSlash },
+    { id: 3, name: 'Module 3', title: 'Computer Software', icon: cogOutline},
+    { id: 4, name: 'Module 4', title: 'Programming', icon: codeSlash, currentWeek: true, label: 'Current'  },
     { id: 5, name: 'Module 5', title: 'Visual Basic Programming', icon: codeSlash },
     { id: 6, name: 'Module 6', title: 'Applications', icon: leafOutline },
     { id: 7, name: 'Module 7', title: 'Threats & Security', icon: hardwareChipOutline }
@@ -61,9 +61,9 @@ const Home: React.FC = () => {
 
   /* ---- Current Week Assignment ---- */
   const currentWeekAssignment = {
-    title: 'Module 3 ',
+    title: 'Module 4 ',
     description: 'Computer Software',
-    moduleId: 3,
+    moduleId: 4,
   };
 
   /* ---- Search Filters ---- */
